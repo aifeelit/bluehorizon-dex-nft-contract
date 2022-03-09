@@ -1,0 +1,53 @@
+{
+  "name": "@BlueHorizonArt/swap-core",
+  "description": " Core contracts for the BlueHorizon swap protocol",
+  "version": "0.0.1",
+  "keywords": [
+    "swap",
+    "ethereum",
+    "core"
+  ],
+  "files": [
+    "contracts",
+    "build"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "devDependencies": {
+    "@truffle/hdwallet-provider": "^1.4.0",
+    "@types/chai": "^4.2.6",
+    "@types/mocha": "^5.2.7",
+    "chai": "^4.2.0",
+    "ethereum-waffle": "^2.4.1",
+    "ethereumjs-util": "^6.2.0",
+    "ethers": "^4.0.48",
+    "mocha": "^6.2.2",
+    "prettier": "^1.19.1",
+    "prettier-plugin-solidity": "^1.0.0-beta.11",
+    "rimraf": "^3.0.0",
+    "solc": "0.5.16",
+    "truffle-plugin-verify": "^0.5.9",
+    "ts-node": "^8.5.4",
+    "typescript": "^3.7.3"
+  },
+  "dependencies": {},
+  "scripts": {
+    "lint": "yarn prettier --check ./test/{**/*,*}.ts ./contracts/{**/*,*}.sol ",
+    "lint:fix": "yarn prettier  --write ./test/{**/*,*}.ts ./contracts/{**/*,*}.sol",
+    "clean": "rimraf ./build/",
+    "precompile": "yarn clean",
+    "compile": "waffle .waffle.json",
+    "pretest": "yarn compile",
+    "test": "mocha",
+    "prepublishOnly": "yarn lint"
+  },
+  "license": "GPL-3.0-or-later",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/BlueHorizonArt/bluehorizon-swap-core.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  }
+}
